@@ -1,0 +1,45 @@
+volumes:
+  pg_data:
+  static:
+  media:
+
+services:
+  db:
+    image: postgres:13
+    env_file: .env
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U django_user -d django"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      
+  backend:
+    image: ozoonee/foodgram_backend
+    env_file: .env
+    depends_on:                   
+      db:
+        condition: service_healthy
+    volumes:
+      - static:/app/backend_static
+      - media:/app/media
+      
+  frontend:
+    image: ozoonee/foodgram_frontend
+    env_file: .env
+    volumes:
+      - static:/static
+    command: cp -r /app/build/. /static/
+      
+  gateway:
+    image: ozoonee/foodgram_gateway
+    depends_on:
+      - backend
+    env_file: .env
+    ports:
+      - 8000:80
+    volumes:
+      - static:/static
+      - media:/media

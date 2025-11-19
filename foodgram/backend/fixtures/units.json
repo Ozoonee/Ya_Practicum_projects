@@ -1,0 +1,66 @@
+[
+{
+  "model": "recipes.measurementunit",
+  "pk": 1,
+  "fields": {
+    "name": "грамм",
+    "abbrev": "г"
+  }
+},
+{
+  "model": "recipes.measurementunit",
+  "pk": 2,
+  "fields": {
+    "name": "килограмм",
+    "abbrev": "кг"
+  }
+},
+{
+  "model": "recipes.measurementunit",
+  "pk": 3,
+  "fields": {
+    "name": "литр",
+    "abbrev": "л"
+  }
+},
+{
+  "model": "recipes.measurementunit",
+  "pk": 4,
+  "fields": {
+    "name": "миллилитр",
+    "abbrev": "мл"
+  }
+},
+{
+  "model": "recipes.measurementunit",
+  "pk": 5,
+  "fields": {
+    "name": "штука",
+    "abbrev": "шт"
+  }
+},
+{
+  "model": "recipes.measurementunit",
+  "pk": 6,
+  "fields": {
+    "name": "чайная ложка",
+    "abbrev": "ч.л."
+  }
+},
+{
+  "model": "recipes.measurementunit",
+  "pk": 7,
+  "fields": {
+    "name": "столовая ложка",
+    "abbrev": "ст.л."
+  }
+},
+{
+  "model": "recipes.measurementunit",
+  "pk": 8,
+  "fields": {
+    "name": "стакан",
+    "abbrev": "ст."
+  }
+}
+]
